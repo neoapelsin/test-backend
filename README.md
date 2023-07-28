@@ -26,7 +26,7 @@ DATABASE_URL={url}
 ## Request example
 
 ```bash
-http://localhost:3000/user/balance/1
+http://localhost:3000/api/user/balance/1
 
 data: {
   amount: -2

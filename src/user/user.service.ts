@@ -21,7 +21,7 @@ export class UserService {
     }
 
     async changeBalance(userId: number, amount: number) {
-        const user = await this.byId(userId);
+        await this.byId(userId);
 
         try {
             const updatedData = await this.userRepository

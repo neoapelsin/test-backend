@@ -1,9 +1,9 @@
 {
   "name": "test-backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
+  "description": "test task",
+  "author": "neoapelsin",
+  "private": false,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",

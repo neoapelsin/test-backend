@@ -24,7 +24,7 @@ describe('UserController (e2e)', () => {
         const results = await Promise.all(
             Array.from({ length: requestsCount }, async () => {
                 return request(app.getHttpServer())
-                    .post(`/user/balance/${userId}`)
+                    .post(`api/user/balance/${userId}`)
                     .send(dto)
                     .set('Content-Type', 'application/json');
             }),

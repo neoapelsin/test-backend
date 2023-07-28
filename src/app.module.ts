@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './entities/user.entity';
 import { UserModule } from './user/user.module';
 
-const entities = [];
+const entities = [User];
 
 @Module({
     imports: [
