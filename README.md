@@ -10,8 +10,8 @@ $ npm install
 # build
 $ npm run build
 
-# development
-$ npm run start
+# prod
+$ npm run start:prod
 
 # watch mode
 $ npm run start:dev
