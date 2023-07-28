@@ -35,8 +35,8 @@ describe('UserController (e2e)', () => {
         );
         const errorResults = results.filter((result) => result.status === 400);
 
-        expect(successResults).toHaveLength(5000); // Ожидаем 5000 успешных запросов
-        expect(errorResults).toHaveLength(5000); // Ожидаем 5000 ошибочных запросов с ошибкой "Insufficient balance"
+        expect(successResults).toHaveLength(5000);
+        expect(errorResults).toHaveLength(5000);
     });
 
     afterAll(async () => {
