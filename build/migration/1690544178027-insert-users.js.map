@@ -1,0 +1,1 @@
+{"version":3,"file":"1690544178027-insert-users.js","sourceRoot":"","sources":["../../src/migration/1690544178027-insert-users.ts"],"names":[],"mappings":";;;AAGA,MAAa,wBAAwB;IAC1B,KAAK,CAAC,EAAE,CAAC,WAAwB;QACpC,MAAM,WAAW,CAAC,KAAK,CAAC,qCAAqC,CAAC,CAAC;IACnE,CAAC;IAEM,KAAK,CAAC,IAAI,CAAC,WAAwB,IAAkB,CAAC;CAChE;AAND,4DAMC"}
