@@ -7,8 +7,11 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+# build
+$ npm run build
+
+# prod
+$ npm run start:prod
 
 # watch mode
 $ npm run start:dev
