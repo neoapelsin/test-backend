@@ -23,7 +23,7 @@ export class UserService {
     async changeBalance(userId: number, amount: number) {
         try {
             const updatedData = await this.userRepository
-                .createQueryBuilder('users')
+                .createQueryBuilder('user')
                 .update(User)
                 .set({ balance: () => `balance + ${amount}` })
                 .where('id = :userId', { userId })
