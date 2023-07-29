@@ -6,7 +6,7 @@ import {
     NotFoundException,
 } from '@nestjs/common';
 import { QueryFailedError } from 'typeorm';
-import { ErrorDefaults, IError } from '../domain/types/error.interface';
+import { IError, errorDefaults } from '../domain/types/error.interface';
 
 @Catch()
 export class UserExceptionFilter implements ExceptionFilter {
@@ -19,7 +19,7 @@ export class UserExceptionFilter implements ExceptionFilter {
         const request = ctx.getRequest();
 
         const error: IError = {
-            ...ErrorDefaults,
+            ...errorDefaults,
             timestamp: new Date().toISOString(),
             path: request.url,
         };
