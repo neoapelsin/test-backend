@@ -21,7 +21,7 @@ const entities = [User];
             autoLoadEntities: true,
             migrations: ['./build/migration/*.js'],
             migrationsRun: true,
-            logging: true,
+            logging: false,
         }),
         UserModule,
     ],

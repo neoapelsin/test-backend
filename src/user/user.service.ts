@@ -1,4 +1,4 @@
-import { HttpException, Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../entities/user.entity';
@@ -21,8 +21,6 @@ export class UserService {
     }
 
     async changeBalance(userId: number, amount: number) {
-        await this.byId(userId);
-
         try {
             const updatedData = await this.userRepository
                 .createQueryBuilder('users')
@@ -32,9 +30,11 @@ export class UserService {
                 .returning(['balance'])
                 .updateEntity(true)
                 .execute();
-            return updatedData.raw[0];
+
+            if (updatedData.raw.length < 1)
+                throw new NotFoundException('User not found');
         } catch (error) {
-            throw new HttpException('Insufficient balance!', 400);
+            throw error;
         }
     }
 }

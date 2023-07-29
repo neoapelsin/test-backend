@@ -5,9 +5,11 @@ import {
     HttpCode,
     Param,
     Post,
+    UseFilters,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
+import { BalanceExceptionFilter } from './balance-exception.filter';
 import { UserChangeBalanceDto } from './user.dto';
 import { UserService } from './user.service';
 
@@ -16,6 +18,7 @@ export class UserController {
     constructor(private readonly userService: UserService) {}
 
     //Изменение баланса
+    @UseFilters(BalanceExceptionFilter)
     @UsePipes(new ValidationPipe())
     @HttpCode(200)
     @Post('balance/:userId')
