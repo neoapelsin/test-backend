@@ -22,7 +22,7 @@ export class UserController {
     @UsePipes(new ValidationPipe())
     @HttpCode(200)
     @Post('balance/:userId')
-    async changeBalance(
+    async changeBalanceById(
         @Param('userId') userId: string,
         @Body() dto: UserChangeBalanceDto,
     ) {
