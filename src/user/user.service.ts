@@ -14,7 +14,7 @@ export class UserService {
         const user = await this.userRepository.findOne({ where: { id } });
 
         if (!user) {
-            throw new NotFoundException('User not found!');
+            throw new NotFoundException();
         }
 
         return user;
@@ -31,8 +31,7 @@ export class UserService {
                 .updateEntity(true)
                 .execute();
 
-            if (updatedData.raw.length < 1)
-                throw new NotFoundException('User not found');
+            if (updatedData.raw.length < 1) throw new NotFoundException();
         } catch (error) {
             throw error;
         }
