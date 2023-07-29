@@ -9,7 +9,7 @@ import {
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
-import { BalanceExceptionFilter } from './balance-exception.filter';
+import { UserExceptionFilter } from './user-exception.filter';
 import { UserChangeBalanceDto } from './user.dto';
 import { UserService } from './user.service';
 
@@ -18,7 +18,7 @@ export class UserController {
     constructor(private readonly userService: UserService) {}
 
     //Изменение баланса
-    @UseFilters(BalanceExceptionFilter)
+    @UseFilters(UserExceptionFilter)
     @UsePipes(new ValidationPipe())
     @HttpCode(200)
     @Post('balance/:userId')
@@ -29,6 +29,7 @@ export class UserController {
         return await this.userService.changeBalance(+userId, dto.amount);
     }
 
+    @UseFilters(UserExceptionFilter)
     @Get(':userId')
     async getById(@Param('userId') userId: string) {
         return this.userService.byId(+userId);

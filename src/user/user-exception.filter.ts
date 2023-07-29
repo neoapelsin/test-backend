@@ -9,7 +9,7 @@ import { QueryFailedError } from 'typeorm';
 import { IError } from '../domain/types/error.interface';
 
 @Catch()
-export class BalanceExceptionFilter implements ExceptionFilter {
+export class UserExceptionFilter implements ExceptionFilter {
     catch(
         exception: QueryFailedError | NotFoundException,
         host: ArgumentsHost,
