@@ -6,7 +6,7 @@ import {
     NotFoundException,
 } from '@nestjs/common';
 import { QueryFailedError } from 'typeorm';
-import { IError } from '../domain/types/error.interface';
+import { ErrorDefaults, IError } from '../domain/types/error.interface';
 
 @Catch()
 export class UserExceptionFilter implements ExceptionFilter {
@@ -19,8 +19,7 @@ export class UserExceptionFilter implements ExceptionFilter {
         const request = ctx.getRequest();
 
         const error: IError = {
-            statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-            message: 'Internal server error',
+            ...ErrorDefaults,
             timestamp: new Date().toISOString(),
             path: request.url,
         };
