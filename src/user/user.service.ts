@@ -32,6 +32,8 @@ export class UserService {
                 .execute();
 
             if (updatedData.raw.length < 1) throw new NotFoundException();
+
+            return updatedData.raw[0];
         } catch (error) {
             throw error;
         }
